@@ -1,11 +1,12 @@
 import { run } from 'uebersicht'
 
-const SPACES = 'SPACES'
-const WINDOW_TITLE = 'YABAI'
+const LUMIERE_SPACES = 'SPACES'
+const LUMIERE_WINDOW = 'YABAI'
 const LUMIERE_DATE = 'DATE'
 const LUMIERE_CPU = 'CPU'
 const LUMIERE_MEM = 'MEM'
-const MUSIC = 'MUSIC'
+const LUMIERE_MUSIC = 'MUSIC'
+const LUMIERE_BATTERY = 'BATTERY'
 
 function safeJson(raw) {
   let result = '';
@@ -22,15 +23,16 @@ const sampleNames = ['window']
 
 export const command = (dispatch) => {
   dispatch({
-    type: WINDOW_TITLE, data: window.LumiereWindowTitle
+    type: LUMIERE_WINDOW, data: window.LumiereWindowTitle
   })
   dispatch({
-    type: SPACES, data: window.LumiereSpaces
+    type: LUMIERE_SPACES, data: window.LumiereSpaces
   })
   dispatch({ type: LUMIERE_DATE, data: window.LumiereDate })
   dispatch({ type: LUMIERE_CPU, data: window.LumiereCPU })
   dispatch({ type: LUMIERE_MEM, data: window.LumiereMemoryPercentage })
-  dispatch({ type: MUSIC, data: window.LumiereMusic || '' })
+  dispatch({ type: LUMIERE_MUSIC, data: window.LumiereMusic || '' })
+  dispatch({ type: LUMIERE_BATTERY, data: window.LumiereBattery || '' })
 }
 export const refreshFrequency = 200
 
@@ -43,7 +45,7 @@ export const initialState = {
   music: ''
 }
 
-export const render = ({ spaces, windowTitle, clock, cpu, mem, music }) => {
+export const render = ({ spaces, windowTitle, clock, cpu, mem, music, battery }) => {
   return <div>
     <div className="bar">
       <div className="spaces">{spaces}</div>
@@ -71,6 +73,14 @@ export const render = ({ spaces, windowTitle, clock, cpu, mem, music }) => {
           </span>
           </div>
         )}
+        {Number.isInteger(battery) && (
+          <div className="stat">
+            <span className="label">B:</span>
+            <span className="content">
+              {battery}%
+          </span>
+          </div>
+        )}
       </div>
     </div>
   </div>
@@ -81,13 +91,13 @@ export const updateState = (event, previousState) => {
   const { windowTitle, clock, cpu, spaces, mem, music } = previousState
 
   switch (type) {
-    case WINDOW_TITLE:
+    case LUMIERE_WINDOW:
       return data !== windowTitle && {
         ...previousState,
         windowTitle: event.data
       } || previousState
 
-    case SPACES:
+    case LUMIERE_SPACES:
       return data !== spaces && {
         ...previousState,
         spaces: event.data
@@ -111,10 +121,16 @@ export const updateState = (event, previousState) => {
         mem: event.data
       } || previousState
 
-    case MUSIC:
+    case LUMIERE_MUSIC:
       return data !== music && {
         ...previousState,
         music: event.data
+      } || previousState
+
+    case LUMIERE_BATTERY:
+      return data !== music && {
+        ...previousState,
+        battery: event.data
       } || previousState
 
     default:
