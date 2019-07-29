@@ -44,4 +44,4 @@ export const command = () => {
     }).catch(console.log)
   }).catch(console.log)
 };
-export const refreshFrequency = 10000;
+export const refreshFrequency = 20000;

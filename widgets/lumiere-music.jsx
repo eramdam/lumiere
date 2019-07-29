@@ -1,8 +1,5 @@
-import { run } from 'uebersicht'
-
-export const command = () => {
-  run('osascript lumiere/itunes.applescript').then(out => {
-    window.LumiereMusic = out
-  })
+export const command = `osascript lumiere/itunes.applescript`
+export const render = ({ output }) => {
+  window.LumiereMusic = output
 }
 export const refreshFrequency = 1000;
