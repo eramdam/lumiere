@@ -8,6 +8,10 @@ tell application "iTunes"
 			set seperator to " - "
 			set songname to name of current track
 			set songartist to album artist of current track
+			if (songartist = "") then
+				set songartist to artist of current track
+			end if
+			
 			set info to songartist & " - " & songname
 			return info
 		end if
