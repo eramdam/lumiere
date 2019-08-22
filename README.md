@@ -22,4 +22,4 @@ The widgets are still a WIP, things may break, look weird or even max out your C
 # TODO
 
 - [ ] Write documentation
-- [ ] Support other players than iTunes?
+- [x] Support other players than iTunes?
