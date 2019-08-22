@@ -1,4 +1,4 @@
-export const command = `osascript lumiere/itunes.applescript`
+export const command = `osascript lumiere/current-track.applescript`
 export const render = ({ output }) => {
   window.LumiereMusic = output
 }
