@@ -7,6 +7,12 @@ _Lumiere_ is:
 
 > (French) Lumière -> (English) Light
 
+## Table of contents
+  - [Übersicht Widgets](#%c3%9cbersicht-widgets)
+  - [Alfred theme](#alfred-theme)
+  - [License](#license)
+  - [Inspirations](#inspirations)
+
 
 ## Übersicht Widgets
 
@@ -59,7 +65,11 @@ $ open alfred/Lumiere.alfredappearance
 - Unzip it
 - Open the `alfred` folder and double-click on `Lumiere.alfredappearance`
 
-# Inspirations
+## License
+
+[MIT](https://github.com/eramdam/lumiere/blob/master/LICENSE)
+
+## Inspirations
 - [nero](https://github.com/lucaorio/nero) by [Luca Orio](https://github.com/lucaorio)
 - [pecan](https://github.com/zzzeyez/pecan) by [Daniel Neemann](https://github.com/zzzeyez)
 
