@@ -1,4 +1,4 @@
-export const command = 'yabai -m query --windows --window'
+export const command = 'cat lumiere/.cache/window.json'
 
 function safeJson(raw) {
   let result = '';
@@ -30,4 +30,4 @@ export const render = ({ output }) => {
   return null;
 }
 
-export const refreshFrequency = false;
+export const refreshFrequency = 500;
