@@ -33,6 +33,9 @@ All the widgets work together to make one menubar with (what I think is) the bar
 ```
 $ git clone https://github.com/eramdam/lumiere
 $ cp -r lumiere/widgets ~/Library/Application\ Support/Übersicht/widgets/lumiere
+$ # if you don't use yabai, you're done!
+$ sh ~/Library/Application\ Support/Übersicht/widgets/lumiere/yabai/install-commands.sh
+$ brew services restart yabai
 ```
 
 #### Manual
@@ -40,6 +43,9 @@ $ cp -r lumiere/widgets ~/Library/Application\ Support/Übersicht/widgets/lumier
 - Download the [latest version of the repo](https://github.com/eramdam/lumiere/releases/latest)
 - Unzip it
 - Move the `widgets` folder into your `Übersicht/widgets` directory
+- If you don't use `yabai` you're done! Otherwise, continue below
+- Execute `~/Library/Application\ Support/Übersicht/widgets/lumiere/yabai/install-commands.sh`. Change the `YABAI_CONFIG_FILE` if necessary.
+- Restart yabai
 
 **Disclaimer:** if your battery is draining like crazy, feel free to adjust the `refreshFrequency` of some of the widgets or remove the widgets files entirely to disable those you don't need.
 
