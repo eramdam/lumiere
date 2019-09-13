@@ -29,4 +29,4 @@ export const render = ({ output }) => {
   }).join(' ')
 }
 
-export const refreshFrequency = false;
+export const refreshFrequency = 1000;
