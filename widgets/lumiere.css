@@ -10,7 +10,7 @@
   right: 0;
   width: 100%;
   height: var(--bar-height);
-  user-select: none;
+  -webkit-user-select: none;
 
   color: white;
   color: rgba(255, 255, 255, .95);
