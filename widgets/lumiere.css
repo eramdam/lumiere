@@ -93,4 +93,8 @@
   .title-content {
     width: 35vw;
   }
+
+  .music {
+    max-width: 40ch;
+  }
 }
