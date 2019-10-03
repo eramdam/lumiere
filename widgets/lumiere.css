@@ -1,5 +1,7 @@
 :root {
   --bar-height: 24px;
+  --foreground: rgba(255, 255, 255, .95);
+  --background: black;
 }
 
 
@@ -12,8 +14,7 @@
   height: var(--bar-height);
   user-select: none;
 
-  color: white;
-  color: rgba(255, 255, 255, .95);
+  color: var(--foreground);
   font-family: "SF Mono";
   display: grid;
   grid-template-areas: 'spaces music title stats clock';
@@ -29,7 +30,7 @@
 }
 
 .bar.bg {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: var(--background);
   z-index: -1;
 }
 
