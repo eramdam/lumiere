@@ -27,6 +27,8 @@
   padding-right: 30px;
   padding-left: 10px;
   box-sizing: border-box;
+
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .bar.bg {
