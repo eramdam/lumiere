@@ -20,6 +20,10 @@ export const render = ({ output }) => {
 
   const currentSpace = spaces.find(space => space.focused);
 
+  if (!currentSpace) {
+    return null;
+  }
+
   window.LumiereSpaces = Array.from(spaces).map(space => {
     if (space.index === currentSpace.index) {
       return `[${space.index}]`
