@@ -2,6 +2,13 @@ set info to ""
 -- Set our list of players
 set apps to {"iTunes", "Spotify"}
 
+try
+	set songname to (do shell script "/usr/local/bin/mpc current --format=%title%")
+	set songartist to do shell script "/usr/local/bin/mpc current --format=%artist%"
+on error e
+	--
+end try
+
 -- Loop over that list
 repeat with musicApp in apps
 	-- Check if the app is running.
@@ -18,8 +25,6 @@ repeat with musicApp in apps
 						if (songartist = "") then
 							set songartist to artist of current track
 						end if
-						
-						set info to songartist & " - " & songname
 					end if
 				end tell
 			end using terms from
@@ -29,4 +34,5 @@ repeat with musicApp in apps
 	end if
 end repeat
 
+set info to songartist & " - " & songname
 return info
