@@ -1,4 +1,4 @@
-export const command = 'cat lumiere/.cache/window.json'
+export const command = 'echo ""'
 
 function safeJson(raw) {
   let result = '';
@@ -12,22 +12,22 @@ function safeJson(raw) {
 }
 
 export const render = ({ output }) => {
-  const yabai = safeJson(output)
+  // const yabai = safeJson(output)
 
-  let { app, title } = yabai;
-  title = (title || '').replace(/^\[[0-9]+\]/, '').trim()
+  // let { app, title } = yabai;
+  // title = (title || '').replace(/^\[[0-9]+\]/, '').trim()
 
-  function computeTitle() {
-    if (!app) {
-      return '';
-    }
+  // function computeTitle() {
+  //   if (!app) {
+  //     return '';
+  //   }
 
-    return `[${app}] ${title}`.trim();
-  }
+  //   return `[${app}] ${title}`.trim();
+  // }
 
-  window.LumiereWindowTitle = computeTitle()
+  // window.LumiereWindowTitle = computeTitle()
 
   return null;
 }
 
-export const refreshFrequency = 500;
+export const refreshFrequency = 1000;

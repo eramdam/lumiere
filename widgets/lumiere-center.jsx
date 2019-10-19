@@ -1,5 +1,3 @@
-import { run } from 'uebersicht'
-
 const LUMIERE_SPACES = 'SPACES'
 const LUMIERE_WINDOW = 'YABAI'
 const LUMIERE_DATE = 'DATE'
@@ -34,7 +32,7 @@ export const command = (dispatch) => {
   dispatch({ type: LUMIERE_MUSIC, data: window.LumiereMusic || '' })
   dispatch({ type: LUMIERE_BATTERY, data: window.LumiereBattery || '' })
 }
-export const refreshFrequency = 200
+export const refreshFrequency = 1000
 
 export const initialState = {
   windowTitle: '',
