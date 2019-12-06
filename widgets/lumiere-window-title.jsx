@@ -30,4 +30,4 @@ export const render = ({ output }) => {
   return null;
 }
 
-export const refreshFrequency = 500;
+export const refreshFrequency = false;
