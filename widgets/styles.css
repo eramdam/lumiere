@@ -1,0 +1,36 @@
+:root {
+  --bar-height: 24px;
+  --foreground: rgba(255, 255, 255, .95);
+  --background: rgba(0, 0, 0, .65);
+}
+
+body, html {
+  height: var(--bar-height);
+}
+
+#uebersicht {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--bar-height);
+  -webkit-user-select: none;
+
+  background: var(--background);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--foreground);
+
+  font-family: "SF Mono";
+  display: grid;
+  grid-template-areas: 'spaces music title stats clock';
+  grid-template-columns: auto auto 1fr auto auto;
+  grid-column-gap: 20px;
+  align-items: center;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+
+  padding-right: 30px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}

@@ -1,4 +1,7 @@
-export const command = 'yabai -m query --spaces'
+import { css } from "uebersicht"
+
+export const command = 'yabai -m query --spaces';
+export const refreshFrequency = 2000;
 
 function safeJson(raw) {
   let result = '';
@@ -10,6 +13,7 @@ function safeJson(raw) {
 
   return result
 }
+
 
 export const render = ({ output }) => {
   const spaces = safeJson(output);
@@ -24,13 +28,17 @@ export const render = ({ output }) => {
     return null;
   }
 
-  window.LumiereSpaces = Array.from(spaces).map(space => {
+  const result = Array.from(spaces).map(space => {
     if (space.index === currentSpace.index) {
       return `[${space.index}]`
     }
 
     return space.index
-  }).join(' ')
-}
+  }).join(' ');
 
-export const refreshFrequency = 1000;
+  return result;
+}
+export const className = css`
+  grid-area: spaces;
+  position: relative;
+`
